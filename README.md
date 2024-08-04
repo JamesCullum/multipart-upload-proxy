@@ -19,13 +19,12 @@ In docker compose, you can use it like this (if you only want it to be exposed w
         environment:
           - IMG_MAX_WIDTH=1920
           - IMG_MAX_HEIGHT=1080
-          - FORWARD_DESTINATION=http://immich-server:3001/asset/upload
+          - FORWARD_DESTINATION=http://immich-server:3001/api/assets
           - FILE_UPLOAD_FIELD=assetData
-          - LISTEN_PATH=/api/asset/upload
+          - LISTEN_PATH=/api/assets
         restart: always
 
 If you use existing software, it might be needed to intercept incoming connections and redirect them to this proxy. You can do this via Cloudflare tunnels or via a front-facing reverse proxy/webserver.
-
 
 
 ## Environment variables
@@ -38,5 +37,5 @@ If you use existing software, it might be needed to intercept incoming connectio
 |`IMG_MAX_PIXELS`|2073600|If the images width*height (in pixels) doesn't exceed this value, don't resize
 |`FORWARD_DESTINATION`|https://httpbin.org/post|Where should the result be sent to
 |`FILE_UPLOAD_FIELD`|assetData|Name of the file field to potentially resize
-|`LISTEN_PATH`|/upload|Path used to process file uploads
+|`LISTEN_PATH`|/api/assets|Path used to process file uploads
 
