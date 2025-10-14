@@ -12,7 +12,7 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN go build -o /proxy proxy.go
+RUN go build -o /proxy .
 
 ## Deploy
 FROM alpine:3.20
