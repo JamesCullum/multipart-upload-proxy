@@ -26,6 +26,9 @@ In docker compose, you can use it like this (if you only want it to be exposed w
 
 If you use existing software, it might be needed to intercept incoming connections and redirect them to this proxy. You can do this via Cloudflare tunnels or via a front-facing reverse proxy/webserver.
 
+You can use the following curl command to test upload an image to a locally running instance with defualt settings.
+
+    curl --header "X-Test: hello" -F "deviceAssetId=web-input.jpg-1672571948584" -F "deviceId=WEB" -F "createdAt=2016-12-02T10:10:20.000Z" -F "modifiedAt=2023-01-01T11:19:08.584Z" -F "isFavorite=false" -F "duration=0:00:00.000000" -F "fileExtension=.jpg" -F "assetData=@landscape.jpg" http://localhost:6743/api/assets
 
 ## Resize Strategies
 
